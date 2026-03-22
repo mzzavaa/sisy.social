@@ -122,7 +122,26 @@ a:hover { color: var(--clr-accent-hover); }
   box-shadow: 0 8px 24px rgba(180, 77, 140, 0.3);
 }
 
+.btn-outline {
+  background: transparent;
+  color: var(--clr-accent);
+  border: 2px solid var(--clr-accent);
+}
+.btn-outline:hover {
+  background: var(--clr-accent);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
 .btn-lg { padding: 18px 48px; font-size: 1.1rem; }
+
+/* ── Hero Actions ── */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 /* ── Hero ── */
 .hero {
@@ -201,18 +220,22 @@ a:hover { color: var(--clr-accent-hover); }
 }
 
 .card-icon {
-  margin-bottom: 16px;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--clr-bg-alt);
+  border-radius: 10px;
 }
 
 .card-icon svg {
-  width: 48px;
-  height: 48px;
-  stroke: var(--clr-accent);
+  width: 22px;
+  height: 22px;
+  stroke: var(--clr-text-soft);
   fill: none;
-  stroke-width: 1.5;
+  stroke-width: 1.75;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -278,10 +301,10 @@ a:hover { color: var(--clr-accent-hover); }
 }
 
 .founder-avatar {
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--clr-accent), #e07db2);
+  background: var(--clr-bg-alt);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,11 +312,11 @@ a:hover { color: var(--clr-accent-hover); }
 }
 
 .founder-avatar svg {
-  width: 36px;
-  height: 36px;
-  stroke: #ffffff;
+  width: 24px;
+  height: 24px;
+  stroke: var(--clr-text-soft);
   fill: none;
-  stroke-width: 1.5;
+  stroke-width: 1.75;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -323,17 +346,105 @@ a:hover { color: var(--clr-accent-hover); }
 }
 
 .story-block-icon svg {
-  width: 32px;
-  height: 32px;
-  stroke: var(--clr-accent);
+  width: 20px;
+  height: 20px;
+  stroke: var(--clr-text-soft);
   fill: none;
-  stroke-width: 1.5;
+  stroke-width: 1.75;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .story-block h3 { color: var(--clr-text); margin-bottom: 12px; font-size: 1.2rem; }
 .story-block p { font-size: 0.95rem; line-height: 1.7; }
+
+/* ── Problem Cards ── */
+.problem-card {
+  padding: 40px 32px;
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 16px var(--clr-card-shadow);
+}
+
+.problem-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.problem-card-header svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--clr-text-soft);
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.problem-card-header h3 { margin-bottom: 0; color: var(--clr-text); font-size: 1.2rem; }
+
+.problem-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.problem-list li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--clr-text-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.problem-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+}
+
+/* ── Industry Tags ── */
+.industry-tag {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 28px;
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px var(--clr-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.industry-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px var(--clr-card-shadow-hover);
+}
+
+.industry-tag svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--clr-text-soft);
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.industry-tag span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--clr-text);
+}
 
 /* ── CTA ── */
 .section-cta {
@@ -363,4 +474,6 @@ a:hover { color: var(--clr-accent-hover); }
   .theme-toggle svg { width: 18px; height: 18px; }
   .founder { padding: 28px 24px; }
   .story-block { padding: 28px 24px; }
+  .problem-card { padding: 28px 24px; }
+  .industry-tag { padding: 18px 20px; }
 }
