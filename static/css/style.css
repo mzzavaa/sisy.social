@@ -398,6 +398,38 @@ a:hover { color: var(--clr-accent-hover); }
 .founder .founder-role { font-size: 0.8rem; color: var(--clr-accent); font-weight: 600; margin-bottom: 10px; }
 .founder p:last-child { font-size: 0.9rem; }
 
+/* ── Founders Photo Section ── */
+.founders-photo-section {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.founders-photo {
+  width: 100%;
+  border-radius: var(--radius);
+  object-fit: cover;
+  max-height: 420px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 24px var(--clr-card-shadow-hover);
+}
+
+.founders-bios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.founder-bio {
+  padding: 24px;
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 16px var(--clr-card-shadow);
+}
+
+.founder-bio h3 { color: var(--clr-text); margin-bottom: 4px; }
+.founder-bio .founder-role { font-size: 0.8rem; color: var(--clr-accent); font-weight: 600; margin-bottom: 10px; }
+.founder-bio p:last-child { font-size: 0.9rem; }
+
 .story-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
