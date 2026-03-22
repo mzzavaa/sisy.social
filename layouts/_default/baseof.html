@@ -3,20 +3,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ .Site.Title }}</title>
-  <meta name="description" content="{{ .Site.Params.description }}">
-  <meta property="og:title" content="{{ .Site.Title }}">
-  <meta property="og:description" content="{{ .Site.Params.description }}">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - SISY{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - SISY{{ end }}">
+  <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ .Site.BaseURL }}">
+  <meta property="og:url" content="{{ .Permalink }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="{{ .Site.BaseURL }}" class="nav-logo">SISY</a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="{{ "platform/" | relURL }}" {{ if eq .RelPermalink "/platform/" }}class="active"{{ end }}>Platform</a>
+        <a href="{{ "framework/" | relURL }}" {{ if eq .RelPermalink "/framework/" }}class="active"{{ end }}>Framework</a>
+        <a href="{{ "about/" | relURL }}" {{ if eq .RelPermalink "/about/" }}class="active"{{ end }}>About</a>
+        <a href="{{ .Site.Params.discordInvite }}" class="btn btn-primary btn-sm">Join Community</a>
+      </div>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
+        <i data-lucide="sun" class="icon-sun"></i>
+        <i data-lucide="moon" class="icon-moon"></i>
+      </button>
+    </div>
+  </nav>
+
   {{ block "main" . }}{{ end }}
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-brand">SISY</p>
+        <p class="footer-tagline">The visibility infrastructure for female expertise</p>
+      </div>
+      <div class="footer-links">
+        <a href="{{ "platform/" | relURL }}">Platform</a>
+        <a href="{{ "framework/" | relURL }}">Framework</a>
+        <a href="{{ "about/" | relURL }}">About</a>
+        <a href="{{ .Site.Params.discordInvite }}">Discord</a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; {{ now.Year }} SISY</p>
+      </div>
+    </div>
+  </footer>
+
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('sisy-theme', next);
+    }
+
+    (function() {
+      const saved = localStorage.getItem('sisy-theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </body>
 </html>

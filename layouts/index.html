@@ -1,11 +1,4 @@
 {{ define "main" }}
-<div class="page">
-
-  <!-- Dark Mode Toggle -->
-  <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">
-    <i data-lucide="sun" class="icon-sun"></i>
-    <i data-lucide="moon" class="icon-moon"></i>
-  </button>
 
   <!-- Hero -->
   <section class="hero">
@@ -14,16 +7,16 @@
       <h1>Be seen. Be heard.<br><em>Be booked.</em></h1>
       <p class="hero-sub">SISY helps women become visible as experts, speakers, and leaders across all industries - and helps organizations discover diverse voices beyond existing networks.</p>
       <div class="hero-actions">
-        <a href="#platform" class="btn btn-primary">Explore the Platform</a>
+        <a href="{{ "platform/" | relURL }}" class="btn btn-primary">Explore the Platform</a>
         <a href="{{ .Site.Params.discordInvite }}" class="btn btn-outline">Join the Community</a>
       </div>
     </div>
   </section>
 
-  <!-- The Problem -->
+  <!-- The Problem (brief) -->
   <section class="section" id="problem">
     <div class="container">
-      <h2>The Problem We Solve</h2>
+      <h2>Why SISY Exists</h2>
       <p class="section-lead">Women are underrepresented on stages, in media, and in leadership - not because of ability, but because of broken discovery and visibility infrastructure.</p>
       <div class="grid grid-2">
         <div class="problem-card">
@@ -33,10 +26,8 @@
           </div>
           <ul class="problem-list">
             <li>Less visible than male peers despite equal or greater expertise</li>
-            <li>Invited less frequently to speak publicly</li>
             <li>Underrepresented on panels and at conferences</li>
             <li>Lack structured guidance for building visibility</li>
-            <li>Rely heavily on personal networks for opportunities</li>
           </ul>
         </div>
         <div class="problem-card">
@@ -47,8 +38,6 @@
           <ul class="problem-list">
             <li>Want diverse speakers but struggle to find them quickly</li>
             <li>Repeatedly invite the same known profiles</li>
-            <li>Lack structured ways to discover new voices</li>
-            <li>Need support building balanced panels</li>
             <li>Cannot easily filter experts by industry, language, or expertise</li>
           </ul>
         </div>
@@ -56,132 +45,36 @@
     </div>
   </section>
 
-  <!-- What is SISY (Platform) -->
-  <section class="section section-alt" id="platform">
+  <!-- Platform Teaser -->
+  <section class="section section-alt">
     <div class="container">
       <h2>The SISY Platform</h2>
-      <p class="section-lead">A complete ecosystem for female expert visibility - from building your profile to getting booked on the world's biggest stages.</p>
+      <p class="section-lead">Expert profiles, opportunity matching, visibility support, community, and organizer tools - everything women need to go from hidden expert to recognized voice.</p>
       <div class="grid grid-3">
         <div class="card">
           <div class="card-icon"><i data-lucide="user-circle"></i></div>
           <h3>Expert Profiles</h3>
-          <p>Structured, public profiles highlighting your expertise, speaking history, visibility assets, and availability.</p>
+          <p>Structured, public profiles highlighting your expertise and availability.</p>
         </div>
         <div class="card">
           <div class="card-icon"><i data-lucide="search"></i></div>
           <h3>Opportunity Matching</h3>
-          <p>Intelligent matching between experts and conferences, panels, podcasts, workshops, advisory roles, and media appearances.</p>
+          <p>Intelligent matching between experts and speaking opportunities.</p>
         </div>
         <div class="card">
           <div class="card-icon"><i data-lucide="trending-up"></i></div>
           <h3>Visibility Support</h3>
-          <p>Structured guidance for bios, talk abstracts, CFP submissions, speaker one-pagers, and personal branding.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon"><i data-lucide="users"></i></div>
-          <h3>Community & Mentorship</h3>
-          <p>Peer feedback, accountability groups, mentorship connections, and cross-industry networking for women at every stage.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon"><i data-lucide="layout-grid"></i></div>
-          <h3>Organizer Tools</h3>
-          <p>Advanced search, curated expert lists, panel building suggestions, and direct booking requests for event organizers.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon"><i data-lucide="mic"></i></div>
-          <h3>Speaker Portfolio</h3>
-          <p>Build a professional portfolio with videos, interviews, articles, podcasts, and press mentions - all in one place.</p>
+          <p>Guidance for bios, abstracts, CFPs, and personal branding.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- The Journey -->
-  <section class="section" id="journey">
-    <div class="container">
-      <h2>Your Visibility Journey</h2>
-      <p class="section-lead">SISY supports the full path: from first speaking experience to recognized industry leader.</p>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">1</span>
-          <h3>Discover</h3>
-          <p>Define your expertise, build your profile, identify speaking topics, and prepare your first visibility assets.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">2</span>
-          <h3>Position</h3>
-          <p>Write bios and abstracts. Submit CFPs. Start appearing on panels, podcasts, and at conferences.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">3</span>
-          <h3>Lead</h3>
-          <p>Keynote speaker, recognized industry expert, mentor to others, advisory and media roles.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Story -->
-  <section class="section section-alt" id="story">
-    <div class="container">
-      <h2>Our Story</h2>
-      <div class="about-content">
-        <p>The name SISY references the myth of Sisyphus - never-ending work - but reframes it as relentless, purposeful progress. SISY is built on the belief that expertise should be discoverable, visibility should be structured, and the infrastructure for female representation should be as strong as it is for any other group.</p>
-      </div>
-      <div class="story-grid">
-        <div class="story-block">
-          <div class="story-block-icon"><i data-lucide="info"></i></div>
-          <h3>The Background</h3>
-          <p>Women are interrupted more often, spoken over in meetings, and invited less frequently to speak - not because of ability, but because of systemic visibility gaps. Highly qualified female voices exist in every industry, but the infrastructure to discover and surface them is broken. SISY was built to fix that.</p>
-        </div>
-        <div class="story-block">
-          <div class="story-block-icon"><i data-lucide="lightbulb"></i></div>
-          <h3>The Idea</h3>
-          <p>What if expertise was structured, searchable, and public by default? What if organizations had real tools to build genuinely balanced panels? What if the path from "qualified expert" to "recognized voice" was a supported journey, not an accident? That's what SISY builds.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Meet the Founders -->
-  <section class="section" id="founders">
-    <div class="container">
-      <h2>Meet the Founders</h2>
-      <div class="founders">
-        <div class="founder">
-          <div class="founder-avatar"><i data-lucide="user"></i></div>
-          <h3>Linda</h3>
-          <p class="founder-role">Co-Founder</p>
-          <p>Passionate about building the visibility infrastructure that women deserve. Linda drives SISY's mission to make female expertise discoverable and structured across industries.</p>
-        </div>
-        <div class="founder">
-          <div class="founder-avatar"><i data-lucide="user"></i></div>
-          <h3>Shakira</h3>
-          <p class="founder-role">Co-Founder</p>
-          <p>Driven by the belief that every qualified woman should be easy to find and invite. Shakira shapes SISY's platform vision - connecting experts with the stages and opportunities they deserve.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Industries -->
-  <section class="section section-alt" id="industries">
-    <div class="container">
-      <h2>Across All Industries</h2>
-      <p class="section-lead">SISY serves women experts in every field - because visibility gaps exist everywhere.</p>
-      <div class="grid grid-3">
-        <div class="industry-tag"><i data-lucide="flask-conical"></i><span>Science & Research</span></div>
-        <div class="industry-tag"><i data-lucide="cpu"></i><span>Technology & AI</span></div>
-        <div class="industry-tag"><i data-lucide="briefcase"></i><span>Business & Entrepreneurship</span></div>
-        <div class="industry-tag"><i data-lucide="palette"></i><span>Creative Industries</span></div>
-        <div class="industry-tag"><i data-lucide="graduation-cap"></i><span>Society & Education</span></div>
-        <div class="industry-tag"><i data-lucide="heart-pulse"></i><span>Health, Culture & Media</span></div>
+      <div class="section-action">
+        <a href="{{ "platform/" | relURL }}" class="btn btn-outline">Learn more about the Platform</a>
       </div>
     </div>
   </section>
 
   <!-- Framework Teaser -->
-  <section class="section" id="framework">
+  <section class="section">
     <div class="container">
       <h2>The Sisy Framework</h2>
       <p class="section-lead">An open-source automation framework that packages repeatable patterns into a portable, reusable substrate.</p>
@@ -189,18 +82,21 @@
         <div class="card">
           <div class="card-icon"><i data-lucide="box"></i></div>
           <h3>SisyCore</h3>
-          <p>Shared runtime abstractions - the engine that everything else builds on.</p>
+          <p>Shared runtime abstractions.</p>
         </div>
         <div class="card">
           <div class="card-icon"><i data-lucide="terminal"></i></div>
           <h3>SisyCLI</h3>
-          <p>Developer and operator tooling - your command-line interface for managing instances and workflows.</p>
+          <p>Developer and operator tooling.</p>
         </div>
         <div class="card">
           <div class="card-icon"><i data-lucide="webhook"></i></div>
           <h3>SisyAPI</h3>
-          <p>HTTP API and webhooks - enables external triggers, integrations, and automation endpoints.</p>
+          <p>HTTP API and webhooks.</p>
         </div>
+      </div>
+      <div class="section-action">
+        <a href="{{ "framework/" | relURL }}" class="btn btn-outline">Learn more about the Framework</a>
       </div>
     </div>
   </section>
@@ -212,33 +108,9 @@
       <p class="section-lead">Join the movement building visibility infrastructure for women experts worldwide.</p>
       <div class="hero-actions">
         <a href="{{ .Site.Params.discordInvite }}" class="btn btn-primary btn-lg">Join the Community</a>
+        <a href="{{ "about/" | relURL }}" class="btn btn-outline btn-lg">Read our Story</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; {{ now.Year }} SISY &middot; The visibility infrastructure for female expertise</p>
-    </div>
-  </footer>
-
-</div>
-
-<script>
-  function toggleTheme() {
-    const html = document.documentElement;
-    const current = html.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('sisy-theme', next);
-  }
-
-  (function() {
-    const saved = localStorage.getItem('sisy-theme');
-    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  })();
-</script>
 {{ end }}

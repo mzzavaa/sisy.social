@@ -1,0 +1,240 @@
+{{ define "main" }}
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-label">Open Source</p>
+      <h1>The Sisy<br><em>Framework</em></h1>
+      <p class="hero-sub">A generic, open-source automation framework that packages repeatable patterns into a simple, reusable setup. The portable substrate you can create many instances from.</p>
+    </div>
+  </section>
+
+  <!-- What is it -->
+  <section class="section">
+    <div class="container">
+      <h2>What is the Sisy Framework?</h2>
+      <div class="about-content">
+        <p>The Sisy framework (SisyCore / SisyCLI / SisyAPI) packages the repeatable patterns from the Freelance Automation Project and AgentCore ecosystem into a simple, reusable setup.</p>
+        <p>Sisy is not a full "64 crews out of the box" system. It is the portable substrate - a replicable automation base you can create many instances from (per client, per domain, per environment) from one codebase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Framework Components</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon"><i data-lucide="box"></i></div>
+          <h3>SisyCore</h3>
+          <p>Shared runtime abstractions - the engine that everything else builds on.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="terminal"></i></div>
+          <h3>SisyCLI</h3>
+          <p>Local developer and operator tooling - your command-line interface.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="webhook"></i></div>
+          <h3>SisyAPI</h3>
+          <p>HTTP API and webhooks - enables external triggers and integrations.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="wrench"></i></div>
+          <h3>SisyBench</h3>
+          <p>Workbench for templates, examples, and reference implementations.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="bot"></i></div>
+          <h3>SisyBot</h3>
+          <p>Orchestration bot - routes events, schedules workflows, runs playbooks.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i data-lucide="package"></i></div>
+          <h3>Sisy (Umbrella)</h3>
+          <p>The top-level project containing all packages in a unified monorepo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section class="section">
+    <div class="container">
+      <h2>Architecture</h2>
+
+      <div class="feature-block">
+        <div class="feature-block-header">
+          <i data-lucide="arrow-right-circle"></i>
+          <h3>Entry Points</h3>
+        </div>
+        <p>The Sisy framework can be triggered from multiple sources:</p>
+        <div class="tag-list">
+          <span class="tag">Cron / scheduled tasks</span>
+          <span class="tag">HTTP triggers (API calls)</span>
+          <span class="tag">Notion webhook events</span>
+          <span class="tag">Chat interfaces (Discord-first)</span>
+        </div>
+      </div>
+
+      <div class="feature-block">
+        <div class="feature-block-header">
+          <i data-lucide="workflow"></i>
+          <h3>Runtime Flow</h3>
+        </div>
+        <div class="flow-diagram">
+          <span class="flow-step">Event</span>
+          <span class="flow-arrow"><i data-lucide="chevron-right"></i></span>
+          <span class="flow-step">SisyBot (Router)</span>
+          <span class="flow-arrow"><i data-lucide="chevron-right"></i></span>
+          <span class="flow-step">Crew Handler(s)</span>
+          <span class="flow-arrow"><i data-lucide="chevron-right"></i></span>
+          <span class="flow-step">Tool Calls / Plugins</span>
+        </div>
+      </div>
+
+      <div class="feature-block">
+        <div class="feature-block-header">
+          <i data-lucide="folder-tree"></i>
+          <h3>Monorepo Layout</h3>
+        </div>
+        <pre class="code-block">sisy/
+  packages/
+    sisy-core          # shared runtime abstractions
+    sisy-cli           # developer/operator tooling
+    sisy-api           # HTTP API + webhooks
+    sisy-bench         # templates and reference implementations
+    sisy-bot           # orchestration and event routing
+  plugins/
+    plugin-observability
+    plugin-notion-sync
+    plugin-video
+  examples/
+    freelance-automation-reference
+  docs/</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Concepts -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Key Concepts</h2>
+      <div class="grid grid-3">
+        <div class="feature-block">
+          <div class="feature-block-header">
+            <i data-lucide="layers"></i>
+            <h3>Instances</h3>
+          </div>
+          <p>Runnable units with their own configuration, plugins, secrets, and deployment target. Spin up one instance per client, project, or environment.</p>
+        </div>
+        <div class="feature-block">
+          <div class="feature-block-header">
+            <i data-lucide="plug"></i>
+            <h3>Plugins</h3>
+          </div>
+          <p>Capability bundles that extend the framework. Initial families: Observability, Notion Sync, and Video Pipeline.</p>
+        </div>
+        <div class="feature-block">
+          <div class="feature-block-header">
+            <i data-lucide="send"></i>
+            <h3>Crews & Dispatch</h3>
+          </div>
+          <p>Optional but first-class architectural patterns. A Crew is a domain department, the Dispatcher routes work to the right crew.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Setup Profiles -->
+  <section class="section">
+    <div class="container">
+      <h2>Setup Profiles</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Minimal</h3>
+          <p class="profile-includes">SisyCore + SisyCLI</p>
+          <p>Solo developer, local automation, getting started.</p>
+          <code class="code-inline">sisy init --profile minimal</code>
+        </div>
+        <div class="card">
+          <h3>API</h3>
+          <p class="profile-includes">Minimal + SisyAPI</p>
+          <p>Exposing automations via HTTP, webhook integrations.</p>
+          <code class="code-inline">sisy init --profile api</code>
+        </div>
+        <div class="card">
+          <h3>Workbench</h3>
+          <p class="profile-includes">API + SisyBench + Plugins</p>
+          <p>Full setup, reference implementations, experimenting.</p>
+          <code class="code-inline">sisy init --profile workbench</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLI Commands -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>CLI Commands</h2>
+      <div class="cli-table">
+        <div class="cli-row">
+          <code>sisy init --profile &lt;name&gt;</code>
+          <span>Initialize a new Sisy instance with a setup profile</span>
+        </div>
+        <div class="cli-row">
+          <code>sisy run &lt;workflow&gt;</code>
+          <span>Execute a workflow or playbook</span>
+        </div>
+        <div class="cli-row">
+          <code>sisy doctor</code>
+          <span>Check environment, dependencies, and configuration health</span>
+        </div>
+        <div class="cli-row">
+          <code>sisy plugin add &lt;name&gt;</code>
+          <span>Install and register a plugin</span>
+        </div>
+        <div class="cli-row">
+          <code>sisy plugin list</code>
+          <span>List all installed plugins</span>
+        </div>
+        <div class="cli-row">
+          <code>sisy logs</code>
+          <span>View runtime logs and event history</span>
+        </div>
+        <div class="cli-row">
+          <code>sisy deploy</code>
+          <span>Deploy the current instance to a target environment</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="section">
+    <div class="container">
+      <h2>Tech Stack</h2>
+      <div class="tag-list tag-list-center">
+        <span class="tag">Node.js monorepo</span>
+        <span class="tag">TypeScript runtime</span>
+        <span class="tag">commander.js CLI</span>
+        <span class="tag">Express / Fastify</span>
+        <span class="tag">Event-driven dispatcher</span>
+        <span class="tag">Manifest-based plugins</span>
+        <span class="tag">Notion MCP</span>
+        <span class="tag">Discord MCP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-cta">
+    <div class="container">
+      <h2>Get Started</h2>
+      <p class="section-lead">Explore the framework, contribute, or build your own automation instance.</p>
+      <a href="{{ .Site.Params.discordInvite }}" class="btn btn-primary btn-lg">Join the Community</a>
+    </div>
+  </section>
+
+{{ end }}
