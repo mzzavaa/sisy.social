@@ -1,0 +1,11 @@
+baseURL = "https://sisy.social/"
+languageCode = "en-us"
+title = "Sisy — Women Who Speak Up"
+
+[params]
+  description = "A women-only community where you practice speaking with courage, not perfection."
+  discordInvite = "https://discord.gg/sisy"
+  tagline = "Find your voice. Use it."
+
+[markup.goldmark.renderer]
+  unsafe = true

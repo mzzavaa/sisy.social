@@ -1,0 +1,105 @@
+{{ define "main" }}
+<div class="page">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-label">Women-Only Speaking Community</p>
+      <h1>Find your voice.<br><em>Use it.</em></h1>
+      <p class="hero-sub">Sisy is a safe, supportive space where women practice speaking — with courage, not perfection.</p>
+      <a href="{{ .Site.Params.discordInvite }}" class="btn btn-primary">Join the Community</a>
+    </div>
+  </section>
+
+  <!-- What is Sisy -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2>What is Sisy?</h2>
+      <p class="section-lead">A free Discord community built for women who want to get better at speaking — whether that's on calls, on stage, or in everyday life.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">&#127908;</div>
+          <h3>Practice Calls</h3>
+          <p>Join regular speaking sessions in a judgment-free zone. Nervousness, pauses, and mistakes are all welcome here.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#128156;</div>
+          <h3>Safe Space</h3>
+          <p>What is shared here stays here. No recording, no reposting, no judgment — just support.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">&#127793;</div>
+          <h3>Growth Together</h3>
+          <p>We uplift, not compare. No competition, no selling — just women helping women find their voice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section section-alt" id="values">
+    <div class="container">
+      <h2>Our Values</h2>
+      <div class="grid grid-2">
+        <div class="value">
+          <h3>Courage over Perfection</h3>
+          <p>This space is for practice, not performance. No interruptions, no shaming.</p>
+        </div>
+        <div class="value">
+          <h3>Respect Always</h3>
+          <p>Different opinions are welcome — disrespect is not. We treat each other with kindness.</p>
+        </div>
+        <div class="value">
+          <h3>Support over Competition</h3>
+          <p>We uplift, not compare. No jealousy, no undermining — just genuine encouragement.</p>
+        </div>
+        <div class="value">
+          <h3>Feedback by Consent</h3>
+          <p>Only give feedback if it's asked for. Keep it constructive, kind, and specific.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Join the Discord</h3>
+          <p>Click the invite link and introduce yourself. You're already welcome.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>Pick a Session</h3>
+          <p>Browse scheduled speaking calls or spontaneous practice rooms.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>Show Up & Speak</h3>
+          <p>Camera optional, attention required. Be present, be kind, be brave.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-cta">
+    <div class="container">
+      <h2>Ready to speak up?</h2>
+      <p class="section-lead">Join hundreds of women who chose courage over silence.</p>
+      <a href="{{ .Site.Params.discordInvite }}" class="btn btn-primary btn-lg">Join Sisy on Discord</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; {{ now.Year }} Sisy &middot; A community for women who speak up</p>
+    </div>
+  </footer>
+
+</div>
+{{ end }}
