@@ -19,7 +19,9 @@
   <!-- Navigation -->
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="{{ .Site.BaseURL }}" class="nav-logo">SISY</a>
+      <a href="{{ .Site.BaseURL }}" class="nav-logo">
+        <img src="{{ "images/logo.png" | relURL }}" alt="SISY" class="nav-logo-img">
+      </a>
       <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
         <i data-lucide="menu"></i>
       </button>
