@@ -4,7 +4,7 @@ title = "SISY — Visibility Infrastructure for Female Expertise"
 
 [params]
   description = "SISY helps women become visible as experts, speakers, and leaders across all industries. A platform for discoverability, positioning, and opportunity matching."
-  discordInvite = "https://discord.gg/sisy"
+  discordInvite = "https://discord.gg/RUXgZAAU"
   tagline = "Be seen. Be heard. Be booked."
 
 [markup.goldmark.renderer]

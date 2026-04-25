@@ -79,13 +79,18 @@ a:hover { color: var(--clr-accent-hover); }
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--clr-text);
-  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
 }
-.nav-logo:hover { color: var(--clr-accent); }
+.nav-logo-img {
+  height: 100px;
+  width: auto;
+  max-height: 100px;
+  max-width: 120px;
+  display: block;
+  object-fit: contain;
+}
+.nav-logo:hover .nav-logo-img { opacity: 0.8; }
 
 .nav-links {
   display: flex;
