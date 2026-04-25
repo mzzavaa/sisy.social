@@ -83,9 +83,9 @@ a:hover { color: var(--clr-accent-hover); }
   align-items: center;
 }
 .nav-logo-img {
-  height: 40px;
+  height: 100px;
   width: auto;
-  max-height: 40px;
+  max-height: 100px;
   max-width: 120px;
   display: block;
   object-fit: contain;
