@@ -85,7 +85,10 @@ a:hover { color: var(--clr-accent-hover); }
 .nav-logo-img {
   height: 40px;
   width: auto;
+  max-height: 40px;
+  max-width: 120px;
   display: block;
+  object-fit: contain;
 }
 .nav-logo:hover .nav-logo-img { opacity: 0.8; }
 
