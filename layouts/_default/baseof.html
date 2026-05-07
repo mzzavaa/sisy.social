@@ -45,24 +45,7 @@
 
   {{ block "main" . }}{{ end }}
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-left">
-        <p class="footer-brand">SISY</p>
-        <p class="footer-tagline">The visibility infrastructure for female expertise</p>
-      </div>
-      <div class="footer-links">
-        <a href="{{ "platform/" | relURL }}">Platform</a>
-        <a href="{{ "framework/" | relURL }}">Framework</a>
-        <a href="{{ "about/" | relURL }}">About</a>
-        <a href="{{ .Site.Params.discordInvite }}">Discord</a>
-      </div>
-      <div class="footer-copy">
-        <p>&copy; {{ now.Year }} SISY</p>
-      </div>
-    </div>
-  </footer>
+  {{ partial "footer.html" . }}
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>

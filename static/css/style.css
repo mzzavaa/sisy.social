@@ -827,9 +827,70 @@ a:hover { color: var(--clr-accent-hover); }
 }
 .footer-links a:hover { color: var(--clr-accent); }
 
+.footer-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
 .footer-copy p {
   font-size: 0.8rem;
   color: var(--clr-text-soft);
+  margin: 0;
+}
+
+.footer-ecosystem-note {
+  font-style: italic;
+}
+
+.footer-ecosystem {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px 32px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 16px;
+  padding: 24px 0 8px;
+  border-top: 1px solid var(--clr-border);
+  text-align: left;
+}
+
+.footer-eco-col h4.footer-eco-heading {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+}
+
+.footer-eco-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-eco-col li {
+  font-size: 0.8rem;
+  color: var(--clr-text-soft);
+  line-height: 1.4;
+}
+
+.footer-eco-col a {
+  font-size: 0.8rem;
+  color: var(--clr-text-soft);
+  font-weight: 500;
+}
+.footer-eco-col a:hover { color: var(--clr-accent); }
+
+.footer-eco-tag {
+  font-size: 0.7rem;
+  color: var(--clr-text-soft);
+  opacity: 0.7;
 }
 
 /* ── Responsive ── */
